@@ -14,8 +14,6 @@ for L in palabra:
 				cant += 1
 		letras.append((L.lower(), cant))
 
-# print (letras)
-
 primas = []
 
 for tupla in letras:
@@ -23,9 +21,7 @@ for tupla in letras:
 		print("La letra ",tupla[0]," aparece: ",tupla[1]," veces")
 	else: 
 		print("La letra ",tupla[0]," aparece: ",tupla[1]," vez")
-	if (tupla[1] in (2, 3, 5, 7, 11, 13, 17, 19, 23, 29)):
+	if (tupla[1] in (2, 3, 5, 7, 11, 13, 17, 19, 23, 29)):  #En esta linea escribi los primeros numeros primos suponiendo que el string no iba a contener tantos caracteres, porque no se me ocurrio otra manera de hacerlo. 
 		primas.append(tupla[0])
-
-# print(primas)
 
 print ("Las letras que aparecen un numero primo de veces son:", *primas)
