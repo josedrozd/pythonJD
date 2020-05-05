@@ -50,16 +50,15 @@ def main(args):
 			break
 		else:
 			if (evento=="Ok") and (not(valores[0] == "" or valores[0]=="Olvido el nombre!")):
-				print(evento,valores)
 				nombre=valores[0]
 				if valores[1]=="Ahorcado":
-					#hangman.main()
+					hangman.main()
 					registrar(nombre,"Ahorcado")
 				if valores[1]=="Ta-Te-Ti":
-					#tictactoeModificado.main()
+					tictactoeModificado.main()
 					registrar(nombre,"Ta-TE-TI")
 				if valores[1]=="Otello":
-					#reversegam.main()
+					reversegam.main()
 					registrar(nombre,"Otello")
 			else:
 				layout[0][1]("Olvido el nombre!")
