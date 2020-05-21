@@ -1,14 +1,15 @@
 import PySimpleGUI as sg
+from colores import *
 
 def main(args):
 
-	sg.SetOptions(background_color="#525f57")
+	sg.SetOptions(background_color=color_fondo)
 	layout = [
-		[sg.Button("Nuevo Juego", size =(20,1),font=("Impact", 25),button_color=("#798c62","#c2cead"))],
-		[sg.Button("Cargar Juego", size =(20,1),font=("Impact", 25),button_color=("#798c62","#c2cead"))],
-		[sg.Button("Records", size =(20,1),font=("Impact", 25),button_color=("#798c62","#c2cead"))],
-		[sg.Button("Configuracion", size =(20,1),font=("Impact", 25),button_color=("#798c62","#c2cead"))],
-		[sg.Button("Salir", size =(20,1),font=("Impact", 25),button_color=("#798c62","#c2cead"))]
+		[sg.Button("Nuevo Juego", size =(20,1),font=("Impact", 25),button_color=color_boton)],
+		[sg.Button("Cargar Juego", size =(20,1),font=("Impact", 25),button_color=color_boton)],
+		[sg.Button("Records", size =(20,1),font=("Impact", 25),button_color=color_boton)],
+		[sg.Button("Configuracion", size =(20,1),font=("Impact", 25),button_color=color_boton)],
+		[sg.Button("Salir", size =(20,1),font=("Impact", 25),button_color=color_boton)]
 		]
 	window = sg.Window("ScrabbleAR").Layout(layout)
 
