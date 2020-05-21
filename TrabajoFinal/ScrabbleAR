@@ -1,4 +1,5 @@
 import PySimpleGUI as sg
+import jugar,records,configuracion
 from colores import *
 
 def main(args):
@@ -11,20 +12,28 @@ def main(args):
 		[sg.Button("Configuracion", size =(20,1),font=("Impact", 25),button_color=color_boton)],
 		[sg.Button("Salir", size =(20,1),font=("Impact", 25),button_color=color_boton)]
 		]
-	window = sg.Window("ScrabbleAR").Layout(layout)
+	window = sg.Window("ScrabbleAR",layout)
 
 	while True:
 		evento, valores= window.read()
 
 		if evento == "Nuevo Juego":
-			print("1")
+			window.Hide()
+			jugar.juego()
+			window.UnHide()
 		elif evento == "Cargar Juego":
-			print ("2")
+			window.Hide()
+			jugar.juego(True)
+			window.UnHide()
 		elif evento == "Records":
-			print("3")
+			window.Hide()
+			records.ventana()
+			window.UnHide()
 		elif evento == "Configuracion":
-			print("4")
-		elif evento == "Salir":
+			window.Hide()
+			configuracion.ventana()
+			window.UnHide()
+		elif evento == "Salir" or evento == sg.WIN_CLOSED:
 			break
 
 	window.Close()
