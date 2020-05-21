@@ -4,7 +4,7 @@ import sys
 from colores import *
 
 def crear_botones(n):
-	return [[sg.Button("A",font=("Impact", 12),size=(4,1),button_color=color_boton)]for i in range(n)]
+	return [[sg.Button(" ",font=("Impact", 12),size=(4,1),button_color=color_boton)]for i in range(n)]
 
 def juego (cargar=False):
 	if sys.platform == "win32":
