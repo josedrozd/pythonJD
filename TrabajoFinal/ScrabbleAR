@@ -1,0 +1,33 @@
+import PySimpleGUI as sg
+
+def main(args):
+
+	sg.SetOptions(background_color="#525f57")
+	layout = [
+		[sg.Button("Nuevo Juego", size =(20,1),font=("Impact", 25),button_color=("#798c62","#c2cead"))],
+		[sg.Button("Cargar Juego", size =(20,1),font=("Impact", 25),button_color=("#798c62","#c2cead"))],
+		[sg.Button("Records", size =(20,1),font=("Impact", 25),button_color=("#798c62","#c2cead"))],
+		[sg.Button("Configuracion", size =(20,1),font=("Impact", 25),button_color=("#798c62","#c2cead"))],
+		[sg.Button("Salir", size =(20,1),font=("Impact", 25),button_color=("#798c62","#c2cead"))]
+		]
+	window = sg.Window("ScrabbleAR").Layout(layout)
+
+	while True:
+		evento, valores= window.read()
+
+		if evento == "Nuevo Juego":
+			print("1")
+		elif evento == "Cargar Juego":
+			print ("2")
+		elif evento == "Records":
+			print("3")
+		elif evento == "Configuracion":
+			print("4")
+		elif evento == "Salir":
+			break
+
+	window.Close()
+
+if __name__ == '__main__':
+    import sys
+    sys.exit(main(sys.argv))
