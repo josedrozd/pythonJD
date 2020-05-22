@@ -1,5 +1,4 @@
 import PySimpleGUI as sg
-import ScrabbleAR
 import sys
 from colores import *
 
