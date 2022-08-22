@@ -1,8 +1,4 @@
-import hangman
-import reversegam
-import tictactoeModificado
-import json
-import os.path
+import hangman, reversegam, tictactoeModificado, json, os.path
 import PySimpleGUI as sg
 
 def registrar(nombre,juego):
@@ -49,19 +45,24 @@ def main(args):
 		if evento == "Salir":
 			break
 		else:
-			if (evento=="Ok") and (not(valores[0] == "" or valores[0]=="Olvido el nombre!")):
+			if (evento=="Ok") and (valores[0] != "") and (valores[1]!=""):
 				nombre=valores[0]
+				window.Hide()
 				if valores[1]=="Ahorcado":
 					hangman.main()
 					registrar(nombre,"Ahorcado")
-				if valores[1]=="Ta-Te-Ti":
+				elif valores[1]=="Ta-Te-Ti":
 					tictactoeModificado.main()
 					registrar(nombre,"Ta-TE-TI")
-				if valores[1]=="Otello":
+				else:
 					reversegam.main()
 					registrar(nombre,"Otello")
+				break
 			else:
-				layout[0][1]("Olvido el nombre!")
+				if (valores[0] == ""):
+					sg.popup("Olvido el nombre!")
+				else:
+					sg.popup("Elija un juego!")
 				
 
 	window.Close()
@@ -69,3 +70,4 @@ def main(args):
 if __name__ == '__main__':
     import sys
     sys.exit(main(sys.argv))
+
